@@ -1,9 +1,44 @@
 ---
+import type { MarkdownLayoutProps } from "astro";
 import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
+import BreadCrumbs from "../components/BreadCrumbs.astro";
+import TagBadge from "../components/TagBadge.astro";
+import PostHeader from "../components/PostHeader.astro";
+import ContentsTable from "../components/Outlline.astro";
+
+type Props = MarkdownLayoutProps<{
+    // Define frontmatter props here
+    title: string;
+    author: string;
+    date: string;
+}>;
+
+const { frontmatter, headings } = Astro.props;
 ---
-<BaseLayout>
-<h1>{frontmatter.title}</h1>
-<h2>Post author: {frontmatter.author}</h2>
-<slot />
+
+<BaseLayout title={frontmatter.title}>
+    <BreadCrumbs title={frontmatter.title} />
+    <PostHeader
+        title={frontmatter.title}
+        author={frontmatter.author}
+        date={frontmatter.pubDate}
+        image={frontmatter.image}
+    />
+    <div class="sm:grid grid-cols-3">
+        <div class="h-fit sm:sticky top-0 m-4 sm:mt-10">
+            <div class="mb-8">
+                <h2 class="font-bold mb-4">Tags</h2>
+                {frontmatter.tags.map((tag: string) => <TagBadge tag={tag} />)}
+            </div>
+            <div>
+                <h2 class="font-bold mb-2">On this page</h2>
+                <ContentsTable headings={headings} />
+            </div>
+        </div>
+        <article
+            class="prose prose-font prose-img:rounded-md prose-a:text-primary m-4 sm:ml-20 mt-10 col-span-2"
+        >
+            <slot />
+        </article>
+    </div>
 </BaseLayout>

@@ -1,0 +1,15 @@
+---
+const { headings, url } = Astro.props;
+console.log(Astro.url);
+
+
+---
+<ul>
+{
+    headings.map((heading: Object) =>
+            <a href={`${Astro.url.href}#${heading.slug}`}>
+                <li class={`list-none my-2 w-fit indent-${heading.depth.toString()}`}>{heading.text}</li>
+            </a>
+    )
+}
+</ul>

@@ -1,7 +1,23 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+
+const title: Record<'title',string> = Astro.props
+console.log(title)
 ---
- <Navigation/>
- <slot/>
- <Footer/>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title.title}</title>
+    </head>
+    <body>
+        <div class="h-screen">
+        <Navigation />
+        <slot />
+        <Footer />
+        </div>
+    </body>
+</html>

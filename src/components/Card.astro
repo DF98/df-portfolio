@@ -1,20 +1,22 @@
 ---
-const {title}: string = Astro.props
-const {author}: string = Astro.props
-const {description}: string = Astro.props
-const {date}: string = Astro.props
-const {image}: object = Astro.props
+const { title }: Record<'title', string> = Astro.props;
+const { author }: Record<'author', string> = Astro.props;
+const { description }: Record<'description', string> = Astro.props;
+const { date }: Record<'date', string> = Astro.props;
+const { image }: Record<'image', Object> = Astro.props;
 // alt is a description of the img
-const {slug}: string = Astro.props
+const { slug }: Record<'slug', string> = Astro.props;
 ---
 
-<div class="card w-96 bg-base-100 shadow-xl">
-    <figure><img src={image.url} alt={image.alt}/></figure>
-    <div class="card-body">
-      <h2 class="card-title">{title}</h2>
-      <p>{description}</p>
-      <div class="card-actions justify-end">
-        <a href=`/projects/${slug}`><button class="btn btn-outline btn-primary">Learn More</button></a>
-      </div>
+<div class="card w-80 mx-auto bg-base-200 shadow-2xl my-8">
+  <figure><img src={image.url} alt={image.alt} /></figure>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p>{description}</p>
+    <div class="card-actions justify-end">
+      <a href=`/projects/${slug}`
+        ><button class="btn btn-outline btn-primary">Read Post</button></a
+      >
     </div>
   </div>
+</div>

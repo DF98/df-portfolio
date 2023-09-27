@@ -1,0 +1,16 @@
+---
+const {title}: Record<'title',string> = Astro.props
+const {author}: Record<'author',string> = Astro.props
+const {date}: Record<'date',Date> = Astro.props
+const {image}: Record<'image',Object> = Astro.props
+---
+
+<div class="hero min-h-screen" style={`background-image: url('${image.url}')`} alt={image.alt}>
+    <div class="hero-overlay bg-opacity-60 backdrop-blur-sm"></div>
+    <div class="hero-content text-center text-neutral-content">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold">{title}</h1>
+        <p class="mb-5">{author} | {date.toDateString()}</p>
+      </div>
+    </div>
+  </div>

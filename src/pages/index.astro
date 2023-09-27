@@ -1,31 +1,42 @@
 ---
+import { getCollection, type CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+const allProjects: CollectionEntry<"projects">[] =
+	await getCollection("projects");
 ---
 
-<BaseLayout>
-	<div
-		class="hero min-h-screen bg-base-200"
-	>
+<BaseLayout title="Home">
+	<div class="hero min-h-screen bg-base-200">
 		<div class="hero-content text-center">
 			<div class="max-w-md">
 				<div class="avatar">
 					<div class="w-56 rounded-xl mb-10">
 						<imgsearch
-							src="https://imgs..brave.com/vNq2jFE3XACsBNx6XivyUP5r0PYaPjic3GaSsrkaloE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzE3LzM0LzY3/LzM2MF9GXzIxNzM0/Njc4Ml83WHBDVHQ4/YkxOSnF2VkFhRFpK/d3Zaam0wZXBRbWo2/ai5qcGc"
-						/>
+							src="https://imgs.search.brave.com/sPR8JBQY73AnRz5kCKC23kAcv0OjaAx12huDsCKhx9Y/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9kM3A4/YTRqMi5yb2NrZXRj/ZG4ubWUvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjMvMDQvdW5j/bGUtcnVja3VzLTEw/MjR4NTc2LndlYnA"
+						></imgsearch>
 					</div>
 				</div>
-					<h1 class="text-5xl font-bold">Hello World!<br/> My name is <span class="text-primary">Damian</span></h1>
-					<p class="py-6">
-						I am a web developer who loves designing beautiful
-						websites that are enjoyable to use!
-					</p>
+				<h1 class="text-5xl font-bold">
+					Hello World!<br /> My name is <span class="text-primary"
+						>Damian</span>
+				</h1>
+				<p class="py-6">
+					I am a web developer who loves designing beautiful websites
+					that are enjoyable to use!
+				</p>
 			</div>
 		</div>
 	</div>
 
 	<div>
-		<h1 class="text-3xl font-bold">Some of the languages and tools I've used</h1>
+		<h1 class="text-3xl font-bold">Recent Projects</h1>
+		
+	</div>
+
+	<div>
+		<h1 class="text-3xl font-bold">
+			Some of the languages and tools I've used
+		</h1>
 		<ul>
 			<li>HTML</li>
 			<li>CSS</li>

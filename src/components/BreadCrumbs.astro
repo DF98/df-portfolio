@@ -1,0 +1,13 @@
+---
+import homeSVG from '../../public/home.svg'
+const title: Record<"title",string> = Astro.props
+
+---
+
+<div class="text-sm breadcrumbs mx-8">
+    <ul>
+      <li><a href="/"><img src={homeSVG.src}></a></li> 
+      <li><a href="/projects">Projects</a></li> 
+      <li class="truncate">{title.title}</li>
+    </ul>
+  </div>
