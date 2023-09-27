@@ -1,9 +1,9 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import MobileNav from "../components/MobileNav.astro";
 import Footer from "../components/Footer.astro";
 
 const title: Record<'title',string> = Astro.props
-console.log(title)
 ---
 
 <html lang="en">
@@ -15,6 +15,7 @@ console.log(title)
     </head>
     <body>
         <div class="h-screen">
+        <MobileNav/>
         <Navigation />
         <slot />
         <Footer />
