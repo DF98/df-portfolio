@@ -1,16 +1,24 @@
 ---
-import githubLogo from '../../public/github.svg'
+import githubLogo from "../../public/github.svg";
+import astroLogo from "../../public/astro.svg";
 ---
 
 <footer class="footer footer-center p-10 bg-primary text-primary-content mt-8">
-    <aside>
-      <p>
-        Damian Farinaccio {new Date().getFullYear()}
-      </p> 
-    </aside> 
-    <nav>
-      <div class="grid grid-flow-col gap-4">
-        <a href="https://github.com/DF98" target="_blank"><img src={githubLogo.src}/></a>
-      </div>
-    </nav>
-  </footer>
+  <aside>
+    <p class="font-bold">
+      Damian Farinaccio {new Date().getFullYear()}
+    </p>
+    <p>Made With Astro</p>
+    <a href="https://astro.build/" target="_blank"
+      ><img src={astroLogo.src} /></a
+    >
+  </aside>
+  <nav>
+    <div class="grid grid-flow-col gap-4">
+      <a href="https://github.com/DF98" target="_blank"
+        ><img src={githubLogo.src} /></a
+      >
+    </div>
+    <div class="grid grid-flow-col gap-4"></div>
+  </nav>
+</footer>

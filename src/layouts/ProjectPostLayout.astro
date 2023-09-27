@@ -4,7 +4,7 @@ import BaseLayout from "./BaseLayout.astro";
 import BreadCrumbs from "../components/BreadCrumbs.astro";
 import TagBadge from "../components/TagBadge.astro";
 import PostHeader from "../components/PostHeader.astro";
-import ContentsTable from "../components/Outlline.astro";
+import ContentsTable from "../components/Outline.astro";
 
 type Props = MarkdownLayoutProps<{
     // Define frontmatter props here
@@ -26,7 +26,7 @@ const { frontmatter, headings } = Astro.props;
     />
     <div class="sm:grid grid-cols-3">
         <div class="h-fit sm:sticky top-0 m-4 sm:mt-10">
-            <div class="mb-8">
+            <div class="mb-8 w-80">
                 <h2 class="font-bold mb-4">Tags</h2>
                 {frontmatter.tags.map((tag: string) => <TagBadge tag={tag} />)}
             </div>

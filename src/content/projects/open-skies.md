@@ -6,7 +6,7 @@ description: "Working with WordPress and Elementor as a first time user"
 image: 
     url: https://imgs.search.brave.com/ITibVZm3uNO3oH1jO6W-rB4o-B_X2pAzyk2aPJl5N7Y/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzQzLzkwLzM3/LzM2MF9GXzQzOTAz/NzMyX1gxWjJnenk0/OTdhaXNnTUU2MmNy/bVUwMFNmOHNtUDU5/LmpwZw
     alt: Picture of the Beach
-tags: ["WordPress","Web Development"]
+tags: ["WordPress","Web Development", "test", "code", "php", "internet", "travel","awesome","a pimp named slickback", "uncle rukus", manbearpig]
 draft: false
 
 ---
